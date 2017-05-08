@@ -51,7 +51,7 @@
   function populateVars(s, vars, completions) {
     while (vars) {
       var varDecl = vars.varDecl;
-      var name = varDecl.name;
+      var name = varDecl && varDecl.name ? varDecl.name : vars.name;
       if (name && startsWithString(name, s)) {
         var completion = varDecl.completion;
         if (!completion) {
